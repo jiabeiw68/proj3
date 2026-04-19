@@ -16,6 +16,19 @@ The main goal of this project is to determine whether a **traditional sidebar-ba
 
 ---
 
+## Live Demo
+
+The deployed Shiny app is available here:
+
+**[Launch the app](https://proj3.shinyapps.io/abtesting_random/)**
+
+You can also manually open a specific experimental version through URL parameters:
+
+- **Version A:** `https://proj3.shinyapps.io/abtesting_random/?group=A`
+- **Version B:** `https://proj3.shinyapps.io/abtesting_random/?group=B`
+
+---
+
 ## A/B Test Design
 
 Two versions of the app were tested:
@@ -26,10 +39,7 @@ Two versions of the app were tested:
 - **Version B (Treatment):**  
   A guided, process-oriented version where the sidebar is hidden and users progress through the workflow step by step using **Next** buttons.
 
-Users are assigned to a group automatically at the browser-session level, although the version can also be manually specified through URL parameters:
-
-- `/?group=A`
-- `/?group=B`
+Users are assigned to a group automatically at the browser-session level, although the version can also be manually specified through URL parameters.
 
 ---
 
@@ -114,7 +124,7 @@ In addition to GA4, the app also exports reproducible session-level logs and qua
 
 ---
 
-## Analysis Dataset
+## Dataset Description
 
 The final analytical dataset used for the A/B test contains **5,000 user-level observations** and **8 variables**. Each row represents one user session and records both the assigned interface condition and the resulting behavioral outcomes.
 
@@ -138,9 +148,9 @@ The dataset includes both **binary outcome variables** and **continuous/count-ba
 - **Binary variables**: `click`, `completed`, `bounce`
 - **Continuous / count variables**: `time_spent`, `page_views`, `steps_reached`
 
-### Purpose of the Dataset
+### Dataset Purpose
 
-This dataset is designed to evaluate whether interface design affects user behavior. In particular, it supports comparison between Version A and Version B in terms of:
+This dataset is designed to evaluate whether interface design affects user behavior. In particular, it allows comparison between Version A and Version B in terms of:
 
 - engagement
 - navigation depth
