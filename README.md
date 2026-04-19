@@ -41,6 +41,11 @@ Two versions of the app were tested:
 
 Users are assigned to a group automatically at the browser-session level, although the version can also be manually specified through URL parameters.
 
+## Hypothesis
+
+- **H0 (Null Hypothesis):** There is no difference in user behavior between Version A and Version B.  
+- **H1 (Alternative Hypothesis):** There is a significant difference in user engagement and task completion between the two interface designs.
+
 ---
 
 ## App Workflow
@@ -159,32 +164,51 @@ This dataset is designed to evaluate whether interface design affects user behav
 - bounce behavior
 
 ---
-
 ## Analysis Approach
 
-The accompanying notebook performs both **exploratory data analysis** and **statistical testing** to compare the two interface conditions.
+The analysis combines exploratory data analysis (EDA) with hypothesis testing to evaluate whether the treatment (Version B) leads to statistically significant differences compared to the control (Version A).
 
 ### Exploratory Data Analysis
-- dataset shape and structure checks
-- missing value inspection
-- group balance inspection
-- descriptive statistics by A/B group
-- visual comparison of binary and continuous outcomes
+- dataset structure and consistency checks  
+- missing value inspection  
+- group balance validation  
+- descriptive statistics by A/B group  
+- visual comparison of key engagement and conversion metrics  
 
 ### Statistical Testing
-- **two-sample proportion z-tests** for binary outcomes such as:
-  - click-through rate
-  - completion rate
-  - bounce rate
 
-- **Welch’s t-tests** for continuous outcomes such as:
-  - time spent
-  - page views
-  - steps reached
+To formally evaluate the experimental results:
 
-This combination of EDA and hypothesis testing helps evaluate whether interface design changes lead to meaningful differences in user engagement and task success.
+- **Two-sample proportion z-tests** are applied to binary outcomes:
+  - click-through rate  
+  - completion rate  
+  - bounce rate  
+
+- **Welch’s t-tests** are used for continuous outcomes:
+  - time spent  
+  - page views  
+  - steps reached  
+
+Statistical significance is evaluated at the 5% level (α = 0.05), and results are interpreted in the context of both statistical and practical significance.
+
+## Key Findings
+
+The analysis shows that Version B does not outperform Version A on key performance metrics.
+
+- Version B exhibits lower completion and click rates compared to Version A  
+- Engagement metrics such as time spent, page views, and steps reached are also lower for Version B  
+- Although bounce rate may improve slightly, this does not compensate for the decline in task completion  
+
+Overall, the results suggest that the guided step-by-step interface introduces friction that negatively impacts user performance.
 
 ---
+
+## Conclusion
+
+Based on the experimental results, Version A (sidebar-based interface) remains the more effective design for supporting user engagement and task completion.
+
+The findings do not support deploying Version B in its current form. Further iterations may focus on reducing friction in the guided workflow while preserving its structural clarity.
+
 
 ## Repository Structure
 
